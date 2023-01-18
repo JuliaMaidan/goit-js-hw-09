@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    width: 130px;
+    height: 30px;
+    border: 1px solid rgb(95, 196, 194);
+    border-radius: 5;
+    font-family: serif;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    font-family: serif;
+    font-size: 16px;
+    border: 1px solid rgb(95, 196, 194);
+    border-radius: 10;
+    background-color: rgba(114, 234, 232, 0.576);
+    color: rgb(64, 135, 134);
+}
