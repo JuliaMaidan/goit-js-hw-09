@@ -11,17 +11,16 @@ const minutes = document.querySelector('[data-minutes]')
 const seconds = document.querySelector('[data-seconds]')
 
 let selectedDate;
-const date = new Date();
 startBtn.disabled = true;
 
 const options = {
   enableTime: true,
   time_24hr: true,
-  defaultDate: date,
+  defaultDate: new Date(),
   minuteIncrement: 1,
     onClose(selectedDates) {
       selectedDate = selectedDates[0]
-        if (selectedDate <= date) {
+        if (selectedDate <= new Date()) {
           Notiflix.Notify.failure('Please choose a date in the future');
         } else {
             Notiflix.Notify.success('Press START');
@@ -36,9 +35,8 @@ flatpickr(picker, options);
 function startTimer() {
     const timer = setInterval(() => {
         picker.disabled = true;
-        startBtn.disabled = true;
+      startBtn.disabled = true;
         const countdown = selectedDate - new Date();
-
         const convertation = convertMs(countdown);
         
         if (countdown >= 0) {
